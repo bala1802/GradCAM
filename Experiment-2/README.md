@@ -4,9 +4,15 @@ In this experiment, I have tried out the `pypi grad-cam` library to understand t
 - It highlights the important regions by generating a heatmap that shows where the model's attention is focused within the image. 
 - GradCAM achieves this by using gradients of the model's output with respect to the input image to determine the importance of each pixel.
 
+### Function Definition
+
 Let's understand how the function defined in the **GradCAM/Experiment-2/**`gradcam.py` works internally. This function accepts, the below parameters:
-    * `model` - The `Neural Network model` for which GradCAM will be computed.
-    * `target_layer` - The `layer` in the model to visualize.
-    * `img_list` - A list of `images` to apply GradCAM to.
-    * `preprocess_args` - A dictionary of preprocessing `arguments` for the images.
-    * `**kwargs` - TODO
+
+    - `model` - The `Neural Network model` for which GradCAM will be computed.
+    - `target_layer` - The `layer` in the model to visualize.
+    - `img_list` - A list of `images` to apply GradCAM to.
+    - `preprocess_args` - A dictionary of preprocessing `arguments` for the images.
+    - `**kwargs` - TODO
+
+### GradCAM Instance creation
+
