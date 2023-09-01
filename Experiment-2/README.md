@@ -4,3 +4,4 @@ In this experiment, I have tried out the `pypi grad-cam` library to understand t
 - It highlights the important regions by generating a heatmap that shows where the model's attention is focused within the image. 
 - GradCAM achieves this by using gradients of the model's output with respect to the input image to determine the importance of each pixel.
 
+Let's understand how the function defined in the **GradCAM/Experiment-2/**`gradcam.py` works internally. This function accepts
