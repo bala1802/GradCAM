@@ -31,3 +31,10 @@ The below instructions run on a loop for each `image` present in the `img_list`
 
 ### Visual Examples: Source - [pypi grad-cam](https://pypi.org/project/grad-cam/)
 
+![Alt text](data-images/68747470733a2f2f6769746875622e636f6d2f6a61636f6267696c2f7079746f7263682d677261642d63616d2f626c6f622f6d61737465722f6578616d706c65732f646f672e6a70673f7261773d74727565.jpeg)
+
+- From the above image, the Neural Network predicted that it is a `dog`, and GradCAM identifies the region, corresponding to the prediction.
+
+![Alt text](data-images/68747470733a2f2f6769746875622e636f6d2f6a61636f6267696c2f7079746f7263682d677261642d63616d2f626c6f622f6d61737465722f6578616d706c65732f6361742e6a70673f7261773d74727565.jpeg)
+
+- From the above image, the Neural Network predicte that it is a `cat`, and GradCAM identifies the region, corresponding to the precition.
