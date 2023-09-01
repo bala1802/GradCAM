@@ -17,3 +17,8 @@ Let's understand how the function defined in the **GradCAM/Experiment-2/**`gradc
 ### GradCAM Instance creation
 
 To instantiate the `GradCAM`, the `trained_model` and `target_layer` are used. This instance helps us visualize what parts of an image the neural network paid the most `attention` to, when making a particular `prediction`. It's a tool for interpreting why the network made a specific decision.
+
+### Iterating over the images
+
+
+
