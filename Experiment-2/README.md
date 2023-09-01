@@ -20,10 +20,14 @@ To instantiate the `GradCAM`, the `trained_model` and `target_layer` are used. T
 
 ### Applying the GradCAM instance over the images
 
-The below instructions run on a loop for each image present in the `img_list`
+The below instructions run on a loop for each `image` present in the `img_list`
 
 - The `input image` is converted into a `floating point` format and normalizes the data, dividing it by `255`. This will make the elements present in the `input image tensor` to vary between `0 and 1`. The result is stored inside the `input_tensor`
 - The `input_tensor` is modified by applying `preprocessing` steps. These steps include `resizing the image` to a specific size; `normalizing the image` this normalization is done by subtracting the mean and dividing by the standard deviation of the images's pixel values, this is specifically done to ensure that pixel values have a standard scale and are centered around `zero`
 - The instantiated `cam` gradcam object and the `input_tensor` is used to extract the `grayscal_cam` which identifies the `regions` on which our Neural Network model sees that part as the important area for the prediction. The `targets` parameter specifies the `target class` for which we want to compute the GradCAM heatmap. `targets` is set to `None`, to visualize the heatmap without focusing on a specific class. If we want to highlight the regions important for a specific class, we would specify the `class index`.
 - The output of the above contains a `heatmap`, this heatmap is an image where each `pixel` represents the importance of the corresponding `pixel` in the `original image` to the model's prediction. Higher values in the `heatmap` indicate more importance.
 - The `two-dimensional` `grayscale` is converted to a `one-dimensional` representation of the `heatmap`, which is used for further visualization
+- Then the `heatmap` is overlaid on the `original rgb_image`, with higher heatmap values being represented by more intense colors in the output image. This helps us see which parts of the image were crucial for the model's decision.
+
+### Visual Examples: Source - [pypi grad-cam](https://pypi.org/project/grad-cam/)
+
