@@ -1,27 +1,21 @@
-from typing import Any
-
 import cv2
 import matplotlib.pyplot as plt
 import numpy as np
 import torch
 
 from pytorch_grad_cam import GradCAM
-from pytorch_grad_cam.utils.image import (
-    deprocess_image,
-    preprocess_image,
-    show_cam_on_image
-)
+from pytorch_grad_cam.utils.image import preprocess_image
+from pytorch_grad_cam.utils.image import show_cam_on_image
 
-def plot_cam_on_image(
-        model: Any, target_layer:Any, img_list: list, preprocess_args: dict, **kwargs
-):
-    rows, cols = int(len(img_list) / 5), 5
+
+def overlay_gradcam_on_image(model, target_layer, images, preprocess_args, **kwargs):
+    rows, cols = int(len(images) / 5), 5
     figure = plt.figure(figsize=(cols*2, rows*2))
 
     cam = GradCAM(model=model, target_layers=target_layer, use_cuda=torch.cuda.is_available())
     cam.batch_size = 32
 
-    for i, img in enumerate(img_list):
+    for i, img in enumerate(images):
         rgb_img = np.float32(img) / 255
         input_tensor = preprocess_image(rgb_img, **preprocess_args)
 
