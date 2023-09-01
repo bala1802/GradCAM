@@ -12,7 +12,7 @@ Let's understand how the function defined in the **GradCAM/Experiment-2/**`gradc
     - `target_layer` - The `layer` in the model to visualize.
     - `img_list` - A list of `images` to apply GradCAM to.
     - `preprocess_args` - A dictionary of preprocessing `arguments` for the images.
-    - `**kwargs` - TODO
+    - `**kwargs` - This holds the attributes related to the heatmap.
 
 ### GradCAM Instance creation
 
